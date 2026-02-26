@@ -98,7 +98,7 @@ def criar_pdf(altistas, baixistas):
         pdf.cell(0, 10, f'Gráfico MACD - {ativo}', ln=True)
         pdf.image(f"macd_graficos/{ativo}.png", x=10, y=30, w=190)
 
-    default_dir = Path("/Users/chlima/Library/CloudStorage/OneDrive-Pessoal/Python/Financas/Relatorios")
+    default_dir = Path(__file__).parent.parent / "Relatorios"
     default_dir.mkdir(parents=True, exist_ok=True)
     pdf_path = default_dir / "relatorio_macd_b3_semanal.pdf"
     pdf.output(str(pdf_path))
